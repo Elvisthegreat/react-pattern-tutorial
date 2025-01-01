@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 const UserList = ({ users, loading, error }) => {
-    
+
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Something went wrong</div>;
     if (!users) return null;
@@ -22,13 +22,15 @@ const UserList = ({ users, loading, error }) => {
     );
 };
 
+const user = PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    first_name: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+}).isRequired;
+
 UserList.propTypes = {
-    users: PropTypes.arrayOf({
-        id: PropTypes.number.isRequired,
-        first_name: PropTypes.string.isRequired,
-        email: PropTypes.string.isRequired,
-        avatar: PropTypes.string.isRequired,
-    }).isRequired,
+    users: PropTypes.arrayOf( user ).isRequired,
     loading: PropTypes.bool.isRequired,
     error: PropTypes.bool.isRequired,
 }

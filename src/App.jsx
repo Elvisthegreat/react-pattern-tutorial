@@ -4,7 +4,7 @@ import UserContainer from './containers/UserContainer';
 function App() {
   return (
     <>
-      <h2>User (Container / Presentational)</h2>
+      <h2>User (Container / Presentational Pattern)</h2>
       <UserContainer />
     </>
   );
